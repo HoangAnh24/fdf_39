@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 /*
 |--------------------------------------------------------------------------
@@ -11,7 +11,24 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+Route::get('login',[
+    'uses' => 'UserController@getLogin',
+    'as' => 'page.login'
+]);
+Route::get('logout',[
+    'uses' => 'UserController@logout',
+    'as' => 'page.index'
+]);
+Route::post('login',[
+    'uses' => 'UserController@postLogin',
+    'as' => 'page.login'
+]);
+Route::get('signup',[
+    'uses' => 'UserController@getSignup',
+    'as' => 'page.signup'
+]);
+Route::post('signup',[
+    'uses' => 'UserController@postSignup',
+    'as' => 'page.signup'
+]);
